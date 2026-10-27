@@ -1,0 +1,12 @@
+{
+  "name": "hidden-india",
+  "version": "1.0.0",
+  "description": "Hidden India student web technologies mini project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

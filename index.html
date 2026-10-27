@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hidden India — discover lesser-known destinations, local stories and travel ideas across India.">
+  <title>Hidden India | Explore Beyond the Obvious</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg sticky-top site-nav">
+    <div class="container">
+      <a class="navbar-brand brand" href="#home"><span class="brand-mark">⌁</span> HIDDEN <span>INDIA</span><small>Explore Beyond the Obvious</small></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#destinations">Destinations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planner">Trip Planner</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#feedback">Feedback</a></li>
+        </ul>
+        <button id="themeToggle" class="btn btn-outline-dark btn-sm ms-lg-3 mt-2 mt-lg-0" type="button" aria-label="Toggle dark mode">◐</button>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container hero-content">
+      <p class="eyebrow">A LITTLE CLOSER TO THE UNDISCOVERED</p>
+      <h1>Discover the<br><span>Hidden</span> India.</h1>
+      <p class="hero-copy">Unexplored places. Untold stories. Unforgettable journeys.<br class="d-none d-md-block"> Find the quiet corners and remarkable places that make India extraordinary.</p>
+      <form id="searchForm" class="search-panel row g-2 align-items-end">
+        <div class="col-12 col-md-5">
+          <label for="searchInput" class="form-label">Search destination</label>
+          <input id="searchInput" class="form-control" type="search" placeholder="Try Hampi, Ziro, Gokarna…">
+        </div>
+        <div class="col-6 col-md-3">
+          <label for="categoryFilter" class="form-label">Category</label>
+          <select id="categoryFilter" class="form-select">
+            <option value="all">All categories</option><option value="Mountains">Mountains</option><option value="Beaches">Beaches</option><option value="Historical">Historical</option><option value="Nature">Nature</option>
+          </select>
+        </div>
+        <div class="col-6 col-md-2">
+          <label for="seasonFilter" class="form-label">Best time</label>
+          <select id="seasonFilter" class="form-select">
+            <option value="all">Any time</option><option value="Winter">Winter</option><option value="Summer">Summer</option><option value="Monsoon">Monsoon</option>
+          </select>
+        </div>
+        <div class="col-12 col-md-2 d-grid"><button class="btn btn-accent" type="submit">Explore <span aria-hidden="true">→</span></button></div>
+      </form>
+      <div class="hero-note">✦ Made for curious travellers</div>
+    </div>
+    <div class="hero-location">⌖ Jaipur, Rajasthan</div>
+  </header>
+
+  <main>
+    <section class="section-pad" id="destinations">
+      <div class="container">
+        <div class="section-heading">
+          <div><p class="eyebrow orange-text">YOUR NEXT STORY STARTS HERE</p><h2>Popular destinations</h2></div>
+          <button id="showAllBtn" class="btn btn-link text-decoration-none">View all <span>→</span></button>
+        </div>
+        <div id="destinationGrid" class="row g-4"></div>
+        <p id="emptyState" class="empty-state d-none">No destinations match those filters. Try another search.</p>
+      </div>
+    </section>
+
+    <section class="feature-strip" id="about">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-6 col-lg-3 feature"><span class="feature-icon">◎</span><div><h3>Explore</h3><p>Find places beyond the usual tourist trail.</p></div></div>
+          <div class="col-6 col-lg-3 feature"><span class="feature-icon">⌖</span><div><h3>Plan</h3><p>Build a simple itinerary for your next trip.</p></div></div>
+          <div class="col-6 col-lg-3 feature"><span class="feature-icon">♡</span><div><h3>Save</h3><p>Keep your favourite destinations close.</p></div></div>
+          <div class="col-6 col-lg-3 feature"><span class="feature-icon">✉</span><div><h3>Share</h3><p>Send suggestions and help us improve.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad planner-section" id="planner">
+      <div class="container">
+        <div class="section-heading"><div><p class="eyebrow orange-text">MAKE IT YOURS</p><h2>Plan a small escape</h2></div></div>
+        <div class="planner-card">
+          <div class="planner-intro"><span class="planner-symbol">✧</span><h3>Your next weekend, sorted.</h3><p>Choose a destination and a few details. Your plan will appear below.</p></div>
+          <form id="plannerForm" class="row g-3">
+            <div class="col-12 col-md-4"><label for="planDestination" class="form-label">Destination</label><select id="planDestination" class="form-select" required><option value="">Choose a place</option></select></div>
+            <div class="col-6 col-md-3"><label for="planDays" class="form-label">Trip length</label><select id="planDays" class="form-select"><option value="1">1 day</option><option value="2" selected>2 days</option><option value="3">3 days</option><option value="5">5 days</option></select></div>
+            <div class="col-6 col-md-3"><label for="travelStyle" class="form-label">Travel style</label><select id="travelStyle" class="form-select"><option>Relaxed</option><option>Adventure</option><option>Culture & history</option><option>Nature</option></select></div>
+            <div class="col-12 col-md-2 d-grid align-self-end"><button class="btn btn-accent" type="submit">Create plan</button></div>
+          </form>
+          <div id="planResult" class="plan-result d-none" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad feedback-section" id="feedback">
+      <div class="container feedback-layout">
+        <div><p class="eyebrow orange-text">HELP US GET BETTER</p><h2>Have a hidden gem<br>to share?</h2><p class="muted">Tell us about a place we should feature, or share your experience with Hidden India.</p><div class="contact-note">✉ <span>hiddenindia.project@example.com</span></div></div>
+        <form id="feedbackForm" class="feedback-card" novalidate>
+          <div class="mb-3"><label for="feedbackName" class="form-label">Your name</label><input id="feedbackName" name="name" class="form-control" placeholder="Enter your name" required><div class="invalid-feedback">Please enter your name.</div></div>
+          <div class="mb-3"><label for="feedbackEmail" class="form-label">Email address</label><input id="feedbackEmail" name="email" type="email" class="form-control" placeholder="you@example.com" required><div class="invalid-feedback">Enter a valid email address.</div></div>
+          <div class="mb-3"><label for="feedbackMessage" class="form-label">Your feedback</label><textarea id="feedbackMessage" name="message" class="form-control" rows="4" placeholder="What should we know?" required minlength="10"></textarea><div class="invalid-feedback">Please write at least 10 characters.</div></div>
+          <button class="btn btn-accent w-100" type="submit">Send feedback <span>→</span></button>
+          <p id="feedbackStatus" class="form-status" role="status"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><a class="navbar-brand brand footer-brand" href="#home">⌁ HIDDEN <span>INDIA</span><small>Explore Beyond the Obvious</small></a><p>A student web project celebrating the lesser-known beauty, culture and stories of India.</p></div>
+      <div><h3>Quick links</h3><a href="#home">Home</a><a href="#destinations">Destinations</a><a href="#planner">Trip planner</a><a href="#about">About</a><a href="#feedback">Feedback</a></div>
+      <div><h3>Project info</h3><p>Web Technologies Mini Project</p><p>HTML · CSS · Bootstrap · JavaScript · Node.js</p><p>Academic Year 2026–27</p></div>
+      <div><h3>Made for explorers</h3><p>Discover locally. Travel thoughtfully.</p><a href="#home" class="back-top">Back to top ↑</a></div>
+    </div>
+    <div class="footer-bottom"><div class="container">© <span id="year"></span> Hidden India · Student project for educational purposes.</div></div>
+  </footer>
+
+  <div class="toast-message" id="toastMessage" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
